@@ -1,9 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>AI Social Media Studio</title>
-  </head>
-  <body>
-    <h1>Frontend coming soon</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Social Media Content Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-2xl">
+    <h1 class="text-3xl font-bold text-center mb-6">
+      AI Social Media Content Studio
+    </h1>
+    <div class="space-y-4">
+      <input id="product" class="w-full p-3 border rounded" placeholder="Product Name" />
+      <input id="description" class="w-full p-3 border rounded" placeholder="Product Description" />
+      <input id="audience" class="w-full p-3 border rounded" placeholder="Target Audience" />
+      <input id="platform" class="w-full p-3 border rounded" placeholder="Platform (Instagram, LinkedIn, etc.)" />
+    </div>
+    <div class="flex gap-4 mt-6">
+      <button onclick="generateText()" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
+        Generate Text
+      </button>
+      <button onclick="generateImage()" class="flex-1 bg-green-600 text-white p-3 rounded hover:bg-green-700">
+        Generate Image
+      </button>
+    </div>
+    <div id="textResult" class="mt-6 whitespace-pre-wrap text-sm text-gray-800"></div>
+    <div class="mt-6 flex justify-center">
+      <img id="imageResult" class="hidden rounded-lg shadow-lg max-w-full" />
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>

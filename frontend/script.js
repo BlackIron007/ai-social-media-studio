@@ -1,4 +1,4 @@
-const API_BASE = "ai-social-media-studio-production.up.railway.app";
+const API_BASE = "https://ai-social-media-studio-production.up.railway.app";
 
 function getInputData() {
   return {

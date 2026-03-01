@@ -4,29 +4,47 @@
   <meta charset="UTF-8" />
   <title>AI Social Media Content Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-  <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-2xl">
-    <h1 class="text-3xl font-bold text-center mb-6">
+  <div class="bg-white w-full max-w-2xl p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-semibold text-center">
       AI Social Media Content Studio
     </h1>
-    <div class="space-y-4">
-      <input id="product" class="w-full p-3 border rounded" placeholder="Product Name" />
-      <input id="description" class="w-full p-3 border rounded" placeholder="Product Description" />
-      <input id="audience" class="w-full p-3 border rounded" placeholder="Target Audience" />
-      <input id="platform" class="w-full p-3 border rounded" placeholder="Platform (Instagram, LinkedIn, etc.)" />
+    <p class="text-center text-gray-500 mb-6">
+      Turn product ideas into scroll-stopping social media content
+    </p>
+    <div class="bg-gray-50 p-4 rounded-lg border space-y-4">
+      <input id="productName" class="w-full border p-2 rounded" placeholder="Product name" />
+      <input id="description" class="w-full border p-2 rounded" placeholder="Product description" />
+      <input id="audience" class="w-full border p-2 rounded" placeholder="Target audience" />
+      <input id="platform" class="w-full border p-2 rounded" placeholder="Platform (e.g. Instagram)" />
+      <div class="flex gap-4 pt-2">
+        <button onclick="generateText()" class="flex-1 bg-black text-white py-2 rounded">
+          Generate Text
+        </button>
+        <button onclick="generateImage()" class="flex-1 bg-gray-800 text-white py-2 rounded">
+          Generate Image
+        </button>
+      </div>
     </div>
-    <div class="flex gap-4 mt-6">
-      <button onclick="generateText()" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
-        Generate Text
-      </button>
-      <button onclick="generateImage()" class="flex-1 bg-green-600 text-white p-3 rounded hover:bg-green-700">
-        Generate Image
-      </button>
-    </div>
-    <div id="textResult" class="mt-6 whitespace-pre-wrap text-sm text-gray-800"></div>
-    <div class="mt-6 flex justify-center">
-      <img id="imageResult" class="hidden rounded-lg shadow-lg max-w-full" />
+    <p id="status" class="text-center text-sm text-gray-500 mt-4"></p>
+    <div class="mt-8 space-y-4 bg-gray-50 p-4 rounded-lg border">
+      <details id="textCard" class="bg-white rounded-lg border">
+        <summary class="px-4 py-3 font-medium cursor-pointer hover:bg-gray-100">
+          Generated Text
+        </summary>
+        <div id="textResult" class="prose max-w-none p-4"></div>
+      </details>
+      <details id="imageCard" class="bg-white rounded-lg border">
+        <summary class="px-4 py-3 font-medium cursor-pointer hover:bg-gray-100">
+          Generated Image
+        </summary>
+        <div class="p-4">
+          <img id="imageResult"
+               class="rounded shadow-sm bg-gray-100 hidden mx-auto" />
+        </div>
+      </details>
     </div>
   </div>
   <script src="script.js"></script>

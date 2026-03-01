@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "ai-social-media-studio-production.up.railway.app";
 
 function getInputData() {
   return {

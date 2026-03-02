@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from schemas.generate import GenerateTextRequest, GenerateImageRequest
 from services.text_ai import generate_marketing_text
 from services.image_ai import generate_product_image
-from slowapi import Limiter
+from core.limiter import limiter
 from fastapi import Request
 
 router = APIRouter(prefix="/generate", tags=["Generate"])
